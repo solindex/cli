@@ -1,0 +1,64 @@
+[package]
+authors = ["Solana Maintainers <maintainers@solana.foundation>"]
+edition = "2018"
+name = "solana-cli"
+description = "Blockchain, Rebuilt for Scale"
+version = "1.8.14"
+repository = "https://github.com/solana-labs/solana"
+license = "Apache-2.0"
+homepage = "https://solana.com/"
+documentation = "https://docs.rs/solana-cli"
+
+[dependencies]
+bincode = "1.3.1"
+bs58 = "0.3.1"
+chrono = { version = "0.4.11", features = ["serde"] }
+clap = "2.33.1"
+criterion-stats = "0.3.0"
+ctrlc = { version = "3.1.5", features = ["termination"] }
+console = "0.14.1"
+const_format = "0.2.14"
+dirs-next = "2.0.0"
+log = "0.4.11"
+Inflector = "0.11.4"
+indicatif = "0.15.0"
+humantime = "2.0.1"
+num-traits = "0.2"
+pretty-hex = "0.2.1"
+reqwest = { version = "0.11.2", default-features = false, features = ["blocking", "rustls-tls", "json"] }
+semver = "1.0.4"
+serde = "1.0.122"
+serde_derive = "1.0.103"
+serde_json = "1.0.56"
+solana-account-decoder = { git = "https://github.com/solindex/account-decoder.git", version = "=1.8.14" }
+solana-bpf-loader-program = { git = "https://github.com/solindex/bpf-loader-program.git", version = "=1.8.14" }
+solana-clap-utils = { git = "https://github.com/solindex/clap-utils.git", version = "=1.8.14" }
+solana-cli-config = { git = "https://github.com/solindex/cli-config.git", version = "=1.8.14" }
+solana-cli-output = { git = "https://github.com/solindex/cli-output.git", version = "=1.8.14" }
+solana-client = { git = "https://github.com/solindex/client.git", version = "=1.8.14" }
+solana-config-program = { git = "https://github.com/solindex/programs.git", version = "=1.8.14" }
+solana-faucet = { git = "https://github.com/solindex/faucet.git", version = "=1.8.14" }
+solana-logger = { git = "https://github.com/solindex/logger.git", version = "=1.8.14" }
+solana-net-utils = { git = "https://github.com/solindex/net-utils.git", version = "=1.8.14" }
+solana_rbpf = "=0.2.21"
+solana-remote-wallet = { git = "https://github.com/solindex/remote-wallet.git", version = "=1.8.14" }
+solana-sdk = { git = "https://github.com/solindex/sdk.git", version = "=1.8.14" }
+solana-transaction-status = { git = "https://github.com/solindex/transaction-status.git", version = "=1.8.14" }
+solana-version = { git = "https://github.com/solindex/version.git", version = "=1.8.14" }
+solana-vote-program = { git = "https://github.com/solindex/programs.git", version = "=1.8.14" }
+spl-memo = { version = "=3.0.1", features = ["no-entrypoint"] }
+thiserror = "1.0.21"
+tiny-bip39 = "0.8.1"
+url = "2.1.1"
+
+[dev-dependencies]
+solana-core = { git = "https://github.com/solindex/core.git", version = "=1.8.14" }
+solana-streamer = { git = "https://github.com/solindex/streamer.git", version = "=1.8.14" }
+tempfile = "3.1.0"
+
+[[bin]]
+name = "solana"
+path = "src/main.rs"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
